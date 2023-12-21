@@ -273,7 +273,7 @@ import numpy as np
 def create_plot(ptype):
 # setting the x-axis vaues
     x = np.arange(-10, 10, 0.1)
-# setting the y-axis values
+
     if ptype == 'linear':
         y = x
     elif ptype == 'quadratic':
@@ -283,16 +283,12 @@ def create_plot(ptype):
     elif ptype == 'quartic':
         y = x**4
     return(x, y)
-# setting a style to use
 plt.style.use('fivethirtyeight')
-# create a figure
 fig = plt.figure()
-# define subplots and their positions in figure
 plt1 = fig.add_subplot(221)
 plt2 = fig.add_subplot(222)
 plt3 = fig.add_subplot(223)
 plt4 = fig.add_subplot(224)
-# plotting points on each subplot
 x, y = create_plot('linear')
 plt1.plot(x, y, color ='r')
 plt1.set_title('$y_1 = x$')
@@ -305,9 +301,7 @@ plt3.set_title('$y_3 = x^3$')
 x, y = create_plot('quartic')
 plt4.plot(x, y, color ='k')
 plt4.set_title('$y_4 = x^4$')
-# adjusting space between subplots
 fig.subplots_adjust(hspace=.5,wspace=0.5)
-# function to show the plot
 plt.show()
 
 #%%
@@ -516,7 +510,7 @@ R = 50
 L = 33*10**-3  
 f = 50  
 w = 2 * math.pi * f
-Z = math.sqrt(R**2 + (1j *w* L)**2)
+Z = math.sqrt(R**2 + (1 *w* L)**2)
 I = Vpeak / Z
 P = abs(I)**2 * R
 S = I * Vpeak.conjugate()
